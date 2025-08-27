@@ -1,0 +1,119 @@
+Top 5 domenii:
+www.googletagmanager.com: 72
+googleads.g.doubleclick.net: 63
+static.doubleclick.net: 50
+pagead2.googlesyndication.com: 48
+securepubads.g.doubleclick.net: 45
+
+Statistici companii:
+google: 222 blocări
+facebook: 0 blocări
+doubleclick: 166 blocări
+linkedin: 3 blocări
+amazon: 27 blocări
+yahoo: 81 blocări
+
+Domeniu					IP			ORG
+--------------------------------------------------------------------------------
+raspl.papi-public.eu-central-1.tagger.opecloud.com 0.0.0.0         Unknown
+cdn.cxense.com                           0.0.0.0         Unknown
+rtb.openx.net                            0.0.0.0         Unknown
+googleads.g.doubleclick.net              0.0.0.0         Unknown
+beacon.bidder.taboola.com                0.0.0.0         Unknown
+cd.connatix.com                          0.0.0.0         Unknown
+prebid.media.net                         0.0.0.0         Unknown
+adx.adform.net                           0.0.0.0         Unknown
+prebid.adnxs.com                         0.0.0.0         Unknown
+udc.yahoo.com                            0.0.0.0         Unknown
+eb2.3lift.com                            0.0.0.0         Unknown
+cdn.speedcurve.com                       0.0.0.0         Unknown
+canada.sc.omtrdc.net                     0.0.0.0         Unknown
+stats.bannersnack.com                    0.0.0.0         Unknown
+metrics.brightcove.com                   0.0.0.0         Unknown
+id.crwdcntrl.net                         0.0.0.0         Unknown
+www.google-analytics.com                 0.0.0.0         Unknown
+stats.wp.com                             0.0.0.0         Unknown
+fundingchoicesmessages.google.com        0.0.0.0         Unknown
+cdn.adsafeprotected.com                  0.0.0.0         Unknown
+static.chartbeat.com                     0.0.0.0         Unknown
+static.adsafeprotected.com               0.0.0.0         Unknown
+api.segment.io                           54.214.144.241  AS16509 Amazon.com, Inc.
+ad.doubleclick.net                       0.0.0.0         Unknown
+match.sharethrough.com                   0.0.0.0         Unknown
+ads.rubiconproject.com                   0.0.0.0         Unknown
+eus.rubiconproject.com                   0.0.0.0         Unknown
+display.bidder.taboola.com               0.0.0.0         Unknown
+sync.1rx.io                              0.0.0.0         Unknown
+secure.adnxs.com                         0.0.0.0         Unknown
+static.hotjar.com                        0.0.0.0         Unknown
+entitlements.jwplayer.com                0.0.0.0         Unknown
+ad-delivery.net                          0.0.0.0         Unknown
+gum.criteo.com                           0.0.0.0         Unknown
+securepubads.g.doubleclick.net           0.0.0.0         Unknown
+# blocked domains                        lookup failed
+an.yandex.ru                             0.0.0.0         Unknown
+s0.2mdn.net                              0.0.0.0         Unknown
+js-sec.indexww.com                       0.0.0.0         Unknown
+sync-tm.everesttech.net                  0.0.0.0         Unknown
+ping.chartbeat.net                       0.0.0.0         Unknown
+rtb.gumgum.com                           0.0.0.0         Unknown
+capi.connatix.com                        0.0.0.0         Unknown
+sync.go.sonobi.com                       0.0.0.0         Unknown
+jadserve.postrelease.com                 0.0.0.0         Unknown
+img.connatix.com                         0.0.0.0         Unknown
+c.adsco.re                               0.0.0.0         Unknown
+sb.scorecardresearch.com                 0.0.0.0         Unknown
+aax.amazon-adsystem.com                  0.0.0.0         Unknown
+www.googleadservices.com                 0.0.0.0         Unknown
+ups.analytics.yahoo.com                  0.0.0.0         Unknown
+websdk.appsflyer.com                     0.0.0.0         Unknown
+js.hsadspixel.net                        0.0.0.0         Unknown
+tpc.googlesyndication.com                0.0.0.0         Unknown
+doubleclick.net                          0.0.0.0         Unknown
+pagead2.googlesyndication.com            0.0.0.0         Unknown
+pl.connatix.com                          0.0.0.0         Unknown
+p.typekit.net                            0.0.0.0         Unknown
+raspl.dcapi.tagger.opecloud.com          0.0.0.0         Unknown
+www.googletagservices.com                0.0.0.0         Unknown
+mc.yandex.ru                             0.0.0.0         Unknown
+hbopenbid.pubmatic.com                   0.0.0.0         Unknown
+js-agent.newrelic.com                    0.0.0.0         Unknown
+cdn.snigelweb.com                        0.0.0.0         Unknown
+cds.connatix.com                         0.0.0.0         Unknown
+u.openx.net                              0.0.0.0         Unknown
+www.googletagmanager.com                 0.0.0.0         Unknown
+count-server.sharethis.com               0.0.0.0         Unknown
+static.doubleclick.net                   0.0.0.0         Unknown
+b-code.liadm.com                         0.0.0.0         Unknown
+c2.taboola.com                           0.0.0.0         Unknown
+pixel.adsafeprotected.com                0.0.0.0         Unknown
+ap.lijit.com                             0.0.0.0         Unknown
+api.rlcdn.com                            0.0.0.0         Unknown
+www.npttech.com                          0.0.0.0         Unknown
+js.hs-analytics.net                      0.0.0.0         Unknown
+match.adsrvr.org                         0.0.0.0         Unknown
+direct.adsrvr.org                        0.0.0.0         Unknown
+geo.yahoo.com                            0.0.0.0         Unknown
+bats.video.yahoo.com                     0.0.0.0         Unknown
+geo.query.yahoo.com                      0.0.0.0         Unknown
+i.connectad.io                           0.0.0.0         Unknown
+cdn.parsely.com                          0.0.0.0         Unknown
+ssl.google-analytics.com                 0.0.0.0         Unknown
+tlx.3lift.com                            0.0.0.0         Unknown
+fastlane.rubiconproject.com              0.0.0.0         Unknown
+opus.analytics.yahoo.com                 0.0.0.0         Unknown
+pixel.rubiconproject.com                 0.0.0.0         Unknown
+hbx.media.net                            0.0.0.0         Unknown
+px.ads.linkedin.com                      0.0.0.0         Unknown
+prg.smartadserver.com                    0.0.0.0         Unknown
+dpm.demdex.net                           0.0.0.0         Unknown
+c.amazon-adsystem.com                    0.0.0.0         Unknown
+sync.connectad.io                        0.0.0.0         Unknown
+prebid-server.rubiconproject.com         0.0.0.0         Unknown
+ads.pubmatic.com                         0.0.0.0         Unknown
+s.go-mpulse.net                          0.0.0.0         Unknown
+cdn.taboola.com                          0.0.0.0         Unknown
+ssum-sec.casalemedia.com                 0.0.0.0         Unknown
+ce.lijit.com                             0.0.0.0         Unknown
+ib.adnxs.com                             0.0.0.0         Unknown
+ads.yieldmo.com                          0.0.0.0         Unknown
