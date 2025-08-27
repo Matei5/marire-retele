@@ -1,0 +1,86 @@
+{
+  "target": "google.com",
+  "target_ip": "142.251.39.46",
+  "hops": [
+    {
+      "hop": 1,
+      "ip": "192.168.1.1",
+      "rtt_ms": 2,
+      "city": "",
+      "region": "",
+      "country": ""
+    },
+    {
+      "hop": 2,
+      "ip": "10.0.1.109",
+      "rtt_ms": 3,
+      "city": "",
+      "region": "",
+      "country": ""
+    },
+    {
+      "hop": 3,
+      "ip": "10.30.5.97",
+      "rtt_ms": 3,
+      "city": "",
+      "region": "",
+      "country": ""
+    },
+    {
+      "hop": 4,
+      "ip": "10.220.184.155",
+      "rtt_ms": 3,
+      "city": "",
+      "region": "",
+      "country": ""
+    },
+    {
+      "hop": 5,
+      "ip": "10.220.157.249",
+      "rtt_ms": 17,
+      "city": "",
+      "region": "",
+      "country": ""
+    },
+    {
+      "hop": 6,
+      "ip": "10.221.100.10",
+      "rtt_ms": 20,
+      "city": "",
+      "region": "",
+      "country": ""
+    },
+    {
+      "hop": 7,
+      "ip": "209.85.168.182",
+      "rtt_ms": 21,
+      "city": "Mountain View",
+      "region": "California",
+      "country": "United States"
+    },
+    {
+      "hop": 8,
+      "ip": "209.85.250.89",
+      "rtt_ms": 22,
+      "city": "Mountain View",
+      "region": "California",
+      "country": "United States"
+    },
+    {
+      "hop": 9,
+      "ip": "216.239.35.185",
+      "rtt_ms": 21,
+      "city": "Austell",
+      "region": "Georgia",
+      "country": "United States"
+    },
+    {
+      "hop": 10,
+      "ip": null,
+      "rtt_ms": 20,
+      "city": "",
+      "region": "",
+      "country": ""
+    }
+  ]
+}
