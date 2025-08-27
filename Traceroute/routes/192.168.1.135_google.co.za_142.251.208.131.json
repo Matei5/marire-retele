@@ -1,0 +1,136 @@
+{
+  "target": "google.co.za",
+  "target_ip": "142.251.208.131",
+  "source_ip": "192.168.1.135",
+  "hops": [
+    {
+      "hop": 1,
+      "ip": "192.168.1.1",
+      "rtt_ms": 1.287,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 2,
+      "ip": "10.0.1.109",
+      "rtt_ms": 2.94,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 3,
+      "ip": "172.19.212.33",
+      "rtt_ms": 4.052,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 4,
+      "ip": "10.220.184.155",
+      "rtt_ms": 3.824,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 5,
+      "ip": "10.220.148.202",
+      "rtt_ms": 13.394,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 6,
+      "ip": "10.221.100.10",
+      "rtt_ms": 28.711,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 7,
+      "ip": "209.85.168.182",
+      "rtt_ms": 20.849,
+      "city": "Mountain View",
+      "region": "California",
+      "country": "United States",
+      "geo": {
+        "status": "success",
+        "lat": 37.422,
+        "lon": -122.084,
+        "city": "Mountain View",
+        "country": "United States"
+      }
+    },
+    {
+      "hop": 8,
+      "ip": "209.85.250.89",
+      "rtt_ms": 19.342,
+      "city": "Mountain View",
+      "region": "California",
+      "country": "United States",
+      "geo": {
+        "status": "success",
+        "lat": 37.422,
+        "lon": -122.084,
+        "city": "Mountain View",
+        "country": "United States"
+      }
+    },
+    {
+      "hop": 9,
+      "ip": "142.251.228.28",
+      "rtt_ms": 16.647,
+      "city": "Mountain View",
+      "region": "California",
+      "country": "United States",
+      "geo": {
+        "status": "success",
+        "lat": 37.4225,
+        "lon": -122.085,
+        "city": "Mountain View",
+        "country": "United States"
+      }
+    },
+    {
+      "hop": 10,
+      "ip": "172.253.65.37",
+      "rtt_ms": 21.68,
+      "city": "Mountain View",
+      "region": "California",
+      "country": "United States",
+      "geo": {
+        "status": "success",
+        "lat": 37.4225,
+        "lon": -122.085,
+        "city": "Mountain View",
+        "country": "United States"
+      }
+    },
+    {
+      "hop": 11,
+      "ip": "142.251.208.131",
+      "rtt_ms": 16.143,
+      "city": "Budapest",
+      "region": "Budapest",
+      "country": "Hungary",
+      "geo": {
+        "status": "success",
+        "lat": 47.4979,
+        "lon": 19.0402,
+        "city": "Budapest",
+        "country": "Hungary"
+      }
+    }
+  ]
+}
