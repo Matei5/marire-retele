@@ -1,0 +1,11 @@
+Acesta este un fisier de test pentru tunelul DNS.
+Contine text simplu pentru a testa functionalitatile de transfer.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation.
+
+Acest fisier va fi transferat prin pachete DNS malformate
+folosind protocolul implementat in acest proiect.
+
+Data: 2025-08-28
+Proiect: Tunel DNS pentru transferul de fisiere
