@@ -6,7 +6,7 @@ import os
 import base64
 
 # Configuration
-DOMAIN = "tunel.live" 
+DOMAIN = "t.mytini.live"
 FILES_DIR = "./server_files"
 CHUNK_SIZE = 200
 
@@ -31,7 +31,7 @@ def create_txt_response(transaction_id, query_name, txt_data):
     answer_name = encode_dns_name(query_name)
     txt_bytes = txt_data.encode('utf-8')
     txt_record = struct.pack('!B', len(txt_bytes)) + txt_bytes
-    answer = answer_name + struct.pack('!HHIH', 16, 1, 300, len(txt_record)) + txt_record
+    answer = answer_name + struct.pack('!HHIH', 16, 1, 600, len(txt_record)) + txt_record
     return header + question + answer
 
 def create_nxdomain_response(transaction_id, query_name, query_type):
