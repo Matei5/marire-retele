@@ -31,7 +31,7 @@ def create_txt_response(transaction_id, query_name, txt_data):
     answer_name = encode_dns_name(query_name)
     txt_bytes = txt_data.encode('utf-8')
     txt_record = struct.pack('!B', len(txt_bytes)) + txt_bytes
-    answer = answer_name + struct.pack('!HHIH', 16, 1, 600, len(txt_record)) + txt_record
+    answer = answer_name + struct.pack('!HHIH', 16, 1, 0, len(txt_record)) + txt_record
     return header + question + answer
 
 def create_nxdomain_response(transaction_id, query_name, query_type):
@@ -90,28 +90,35 @@ while True:
             
         query_name, query_type, query_class = parse_dns_question(data[12:])
         
-        # Check if query is for our domain
-        if not query_name.endswith(DOMAIN):
+        # normalize
+        qname = query_name.rstrip('.').lower()
+        domain = DOMAIN.rstrip('.').lower()
+
+        # only my zone
+        if not qname.endswith(domain):
             response = create_nxdomain_response(transaction_id, query_name, query_type)
             sock.sendto(response, addr)
             continue
-            
-        # Only handle TXT records
-        if query_type != 16:
+
+        parts = qname.split('.')
+        dlabels = domain.split('.')
+
+        # need at least: <chunk_id>.<filename...>.<domain...>
+        if len(parts) <= len(dlabels) + 1:
             response = create_nxdomain_response(transaction_id, query_name, query_type)
             sock.sendto(response, addr)
             continue
-            
-        # Parse tunnel request: chunk_id.filename.domain
-        parts = query_name.split('.')
-        if len(parts) < 3:
-            response = create_nxdomain_response(transaction_id, query_name, query_type)
-            sock.sendto(response, addr)
-            continue
-            
+
         chunk_id = parts[0]
-        filename = parts[1]
+        filename_labels = parts[1:-len(dlabels)]   # supports dots in filename
+        filename = ".".join(filename_labels)
+        if not filename:
+            response = create_nxdomain_response(transaction_id, query_name, query_type)
+            sock.sendto(response, addr)
+            continue
+
         file_path = os.path.join(FILES_DIR, filename)
+
         
         if not os.path.exists(file_path):
             response = create_nxdomain_response(transaction_id, query_name, query_type)

@@ -4,13 +4,13 @@
 echo "=== Test DNS Tunnel ==="
 echo
 
-# Verificam daca fisierele exist
+# Verific daca fisierele exist
 if [ ! -f "dns_server.py" ] || [ ! -f "dns_client.py" ]; then
     echo "Eroare: Fisierele server/client nu exista!"
     exit 1
 fi
 
-# Facem fisierele executabile
+# Fac fisierele executabile
 chmod +x dns_server.py dns_client.py
 
 echo "1. Pornesc serverul DNS in background..."
