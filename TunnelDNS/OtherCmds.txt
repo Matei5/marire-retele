@@ -1,0 +1,16 @@
+sudo apt-get update
+sudo apt-get install -y python3 python3-venv python3-pip dnsutils \
+                        netfilter-persistent iptables-persistent
+
+sudo sed -i 's/^#\?DNSStubListener=.*/DNSStubListener=no/' /etc/systemd/resolved.conf
+sudo systemctl restart systemd-resolved
+
+sudo iptables -I INPUT -p udp --dport 53 -j ACCEPT
+sudo iptables -I INPUT -m state --state NEW -p tcp --dport 8080 -j ACCEPT
+
+# save persistently
+sudo netfilter-persistent save
+
+# verify rules
+sudo iptables -L INPUT -n -v --line-numbers
+sudo iptables-save | grep -E 'dport (53|8080)'

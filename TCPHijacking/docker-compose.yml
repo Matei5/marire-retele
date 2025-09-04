@@ -4,7 +4,7 @@ services:
     server:
         build:
             context: .
-            dockerfile: docker/Dockerfile
+            dockerfile: docker/Dockerfile-chap3
         privileged: true
         volumes:
             - ..:/elocal
@@ -14,15 +14,17 @@ services:
           - NET_RAW
           - SYS_ADMIN
         networks:
-            net2:
-              ipv4_address: 198.7.0.2
+            subnet2:
+              ipv4_address: 198.10.0.2
         depends_on:
             - "router"
-        command: bash -c "/scripts/server.sh && sleep infinity"
+        sysctls:
+          - net.ipv4.tcp_congestion_control=reno
+        command: bash -c "/elocal/capitolul3/src/server.sh && sleep infinity"
     middle:
         build:
             context: .
-            dockerfile: docker/Dockerfile
+            dockerfile: docker/Dockerfile-chap3
         volumes:
             - ..:/elocal
         tty: true
@@ -31,17 +33,18 @@ services:
           - NET_RAW
           - SYS_ADMIN
         networks:
-            net2:
-              ipv4_address: 198.7.0.3
+            subnet2:
+              ipv4_address: 198.10.0.3
         depends_on:
             - "router"
         sysctls:
           - net.ipv4.ip_forward=1
-        command: bash -c "/scripts/middle.sh && sleep infinity"
+          - net.ipv4.tcp_congestion_control=reno
+        command: bash -c "/elocal/capitolul3/src/middle.sh && sleep infinity"
     router:
         build:
             context: .
-            dockerfile: docker/Dockerfile
+            dockerfile: docker/Dockerfile-chap3
         volumes:
             - ..:/elocal
         tty: true
@@ -50,17 +53,18 @@ services:
           - NET_RAW
           - SYS_ADMIN
         networks:
-            net1:
-              ipv4_address: 172.7.0.1
-            net2:
-              ipv4_address: 198.7.0.1
+            subnet1:
+              ipv4_address: 172.10.0.1
+            subnet2:
+              ipv4_address: 198.10.0.1
         sysctls:
           - net.ipv4.ip_forward=1
-        command: bash -c "/scripts/router.sh && sleep infinity" # && /alter_packages.sh
+          - net.ipv4.tcp_congestion_control=reno
+        command: bash -c "/elocal/capitolul3/src/router.sh && sleep infinity" # "/elocal/capitolul3/src/alter_packages.sh"
     client:
         build:
             context: .
-            dockerfile: docker/Dockerfile
+            dockerfile: docker/Dockerfile-chap3
         volumes:
             - ..:/elocal
         tty: true
@@ -69,22 +73,24 @@ services:
           - NET_RAW
           - SYS_ADMIN
         networks:
-            net1:
-              ipv4_address: 172.7.0.2
+            subnet1:
+              ipv4_address: 172.10.0.2
         depends_on:
             - "router"
             - "server"
-        command: bash -c "/scripts/client.sh && sleep infinity"
+        sysctls:
+          - net.ipv4.tcp_congestion_control=reno
+        command: bash -c "/elocal/capitolul3/src/client.sh && sleep infinity"
 networks:
-    net1:
+    subnet1:
         ipam:
             driver: default
             config:
-                - subnet: 172.7.0.0/16
-                  gateway: 172.7.1.1
-    net2:
+                - subnet: 172.10.0.0/16
+                  gateway: 172.10.1.1
+    subnet2:
         ipam:
             driver: default
             config:
-                - subnet: 198.7.0.0/16
-                  gateway: 198.7.1.1
+                - subnet: 198.10.0.0/16
+                  gateway: 198.10.1.1
