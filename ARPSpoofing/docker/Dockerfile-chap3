@@ -4,9 +4,13 @@ LABEL org.opencontainers.image.authors="Sergiu Nisioi <sergiu.nisioi@fmi.unibuc.
 
 USER root
 
-RUN apt-get update && apt-get install -y iptables iproute2
-RUN apt-get update && apt-get install -y libnetfilter-queue-dev
-RUN apt-get update && apt-get install -y iperf3 moreutils 
+RUN apt-get update && apt-get install -y iptables iproute2 
+RUN apt-get update && apt-get install -y libnetfilter-queue-dev 
+RUN apt-get update && apt-get install -y iperf3 moreutils curl
+RUN apt-get update && apt-get install -y python3-scapy tcpdump
 
-COPY src/*.sh /
+COPY src/ /docker/
+RUN chmod +x /docker/*.sh
+COPY app/middle.py /app/
+RUN chmod +x /app/middle.py
 
