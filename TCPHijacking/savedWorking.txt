@@ -1,0 +1,61 @@
+SERVER:
+
+matei@matei-LOQ-15IRH8:~/Documents/2. Projects/marire-retele/TCPHijacking$ docker compose exec server bash -lc 'python3 /app/tcp-server.py'
+[LINE:29]# INFO     [2025-09-06 05:56:04,674] Serverul a pornit pe 0.0.0.0 si portnul portul 10000
+[LINE:34]# INFO     [2025-09-06 05:56:04,674] Aștept conexiui...
+[LINE:36]# INFO     [2025-09-06 05:56:24,294] Handshake cu ('172.29.0.254', 56904)
+[LINE:18]# INFO     [2025-09-06 05:56:24,295] Primit de la ('172.29.0.254', 56904): "[INJECTAT]|MSG:-"
+[LINE:18]# INFO     [2025-09-06 05:56:25,299] Primit de la ('172.29.0.254', 56904): "[INJECTAT]|MSG:-"
+[LINE:18]# INFO     [2025-09-06 05:56:26,303] Primit de la ('172.29.0.254', 56904): "[INJECTAT]|MSG:-"
+[LINE:18]# INFO     [2025-09-06 05:56:27,308] Primit de la ('172.29.0.254', 56904): "[INJECTAT]|MSG:-"
+[LINE:18]# INFO     [2025-09-06 05:56:28,311] Primit de la ('172.29.0.254', 56904): "[INJECTAT]|MSG:-"
+[LINE:18]# INFO     [2025-09-06 05:56:29,315] Primit de la ('172.29.0.254', 56904): "[INJECTAT]|MSG:-"
+[LINE:18]# INFO     [2025-09-06 05:56:30,319] Primit de la ('172.29.0.254', 56904): "[INJECTAT]|MSG:-"
+[LINE:16]# INFO     [2025-09-06 05:56:30,846] Client ('172.29.0.254', 56904) a închis conexiunea
+[LINE:34]# INFO     [2025-09-06 05:56:31,849] Aștept conexiui...
+^CTraceback (most recent call last):
+  File "/app/tcp-server.py", line 35, in <module>
+    conn, address = sock.accept()
+  File "/usr/lib/python3.8/socket.py", line 292, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+
+ROUTER:
+
+matei@matei-LOQ-15IRH8:~/Documents/2. Projects/marire-retele/TCPHijacking$ docker compose exec router bash -lc 'iptables -I FORWARD -p tcp --dport 10000 -j NFQUEUE --queue-num 1; iptables -I FORWARD -p tcp --sport 10000 -j NFQUEUE --queue-num 1; python3 /app/tcp-middle.py'
+[INFO] Atașare la NFQUEUE 1…
+[INFO] Running...
+[INFO] Injectat 172.28.0.10:56904 -> 172.29.0.10:10000 (len=16)
+[INFO] Injectat 172.29.0.10:10000 -> 172.28.0.10:56904 (len=20)
+[INFO] Injectat 172.28.0.10:56904 -> 172.29.0.10:10000 (len=16)
+[INFO] Injectat 172.29.0.10:10000 -> 172.28.0.10:56904 (len=20)
+[INFO] Injectat 172.28.0.10:56904 -> 172.29.0.10:10000 (len=16)
+[INFO] Injectat 172.29.0.10:10000 -> 172.28.0.10:56904 (len=20)
+[INFO] Injectat 172.28.0.10:56904 -> 172.29.0.10:10000 (len=16)
+[INFO] Injectat 172.29.0.10:10000 -> 172.28.0.10:56904 (len=20)
+[INFO] Injectat 172.28.0.10:56904 -> 172.29.0.10:10000 (len=16)
+[INFO] Injectat 172.29.0.10:10000 -> 172.28.0.10:56904 (len=20)
+[INFO] Injectat 172.28.0.10:56904 -> 172.29.0.10:10000 (len=16)
+[INFO] Injectat 172.29.0.10:10000 -> 172.28.0.10:56904 (len=20)
+[INFO] Injectat 172.28.0.10:56904 -> 172.29.0.10:10000 (len=16)
+[INFO] Injectat 172.29.0.10:10000 -> 172.28.0.10:56904 (len=20)
+^CTraceback (most recent call last):
+  File "/app/tcp-middle.py", line 65, in <module>
+    nfq.run()
+KeyboardInterrupt
+
+CLIENT:
+matei@matei-LOQ-15IRH8:~/Documents/2. Projects/marire-retele/TCPHijacking$ docker compose exec client bash -lc "echo '172.29.0.10 server' >> /etc/hosts; python3 /app/tcp-client.py"
+[LINE:15]# INFO     [2025-09-06 05:56:24,293] Handshake cu ('server', 10000)
+[LINE:22]# INFO     [2025-09-06 05:56:24,296] Răspuns primit: "[INJECTAT]|ACK:[INJE"
+[LINE:22]# INFO     [2025-09-06 05:56:25,300] Răspuns primit: "[INJECTAT]|ACK:[INJE"
+[LINE:22]# INFO     [2025-09-06 05:56:26,305] Răspuns primit: "[INJECTAT]|ACK:[INJE"
+[LINE:22]# INFO     [2025-09-06 05:56:27,308] Răspuns primit: "[INJECTAT]|ACK:[INJE"
+[LINE:22]# INFO     [2025-09-06 05:56:28,312] Răspuns primit: "[INJECTAT]|ACK:[INJE"
+[LINE:22]# INFO     [2025-09-06 05:56:29,315] Răspuns primit: "[INJECTAT]|ACK:[INJE"
+[LINE:22]# INFO     [2025-09-06 05:56:30,320] Răspuns primit: "[INJECTAT]|ACK:[INJE"
+^C[LINE:29]# INFO     [2025-09-06 05:56:30,845] closing socket
+Traceback (most recent call last):
+  File "/app/tcp-client.py", line 23, in <module>
+    time.sleep(1.0)
+KeyboardInterrupt

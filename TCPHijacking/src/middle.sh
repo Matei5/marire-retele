@@ -1,7 +1,6 @@
 #!/bin/bash
 set -x
-# add route to subnet 198.10.0.0/16 via IP 172.10.0.1
-ip route add 172.10.0.0/16 via 198.10.0.1
+ip route add 172.28.0.0/24 via 172.29.0.254
 # add 8.8.8.8 nameserver
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
