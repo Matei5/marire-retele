@@ -77,7 +77,7 @@ def traceroute(target, max_hops=30):
                             country = data.get("country", "")
                             lat = data.get("lat")
                             lon = data.get("lon")
-                    time.sleep(0.5)  # Rate limit for ip-api
+                    time.sleep(0.5)  # Rate limit
                 except Exception as e:
                     print(f"  Warning: Could not get location for {hop_ip}: {e}")
             elif hop_ip and is_private_ip(hop_ip):
@@ -125,6 +125,7 @@ reports = []
 for target in targets:
     print(f"Tracing route to {target}...")
     report = traceroute(target)
+#   report = traceroute(target, 100)
     reports.append(report)
 
 # Save the results
@@ -136,8 +137,6 @@ for report in reports:
     with open(filename, 'w') as f:
         json.dump(report, f, indent=2)
 
-# Markdown report
-# Prepare markdown content for this run
 run_content = ""
 
 # Get source IP from first report

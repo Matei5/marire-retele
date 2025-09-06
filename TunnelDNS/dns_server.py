@@ -1,19 +1,13 @@
-#!/usr/bin/env python3
 import socket
 import struct
 import hashlib
 import os
 import base64
 
-# Configuration
 DOMAIN = "t.mytini.live"
 FILES_DIR = "./server_files"
 CHUNK_SIZE = 200
-
-# File sessions cache
 sessions = {}
-
-# Create files directory
 os.makedirs(FILES_DIR, exist_ok=True)
 
 def encode_dns_name(name):
@@ -71,7 +65,6 @@ def get_file_session(file_path, addr):
         sessions[session_key] = {'chunks': chunks, 'total_chunks': len(chunks), 'md5': md5_hash}
     return sessions[session_key]
 
-# DNS server
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(("0.0.0.0", 53))
 print("DNS tunnel server started on 0.0.0.0:53")

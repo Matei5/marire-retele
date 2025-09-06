@@ -1,0 +1,283 @@
+{
+  "target": "news.com.au",
+  "target_ip": "104.85.12.114",
+  "source_ip": "10.23.29.160",
+  "hops": [
+    {
+      "hop": 1,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 2,
+      "ip": "10.54.0.1",
+      "rtt_ms": 203.529,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 3,
+      "ip": "172.22.2.1",
+      "rtt_ms": 203.846,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 4,
+      "ip": "10.220.138.238",
+      "rtt_ms": 203.757,
+      "city": "private",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 5,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 6,
+      "ip": "81.196.20.185",
+      "rtt_ms": 203.302,
+      "city": "Bucharest",
+      "region": "Bucure\u0219ti",
+      "country": "Romania",
+      "geo": {
+        "status": "success",
+        "lat": 44.4205,
+        "lon": 26.169,
+        "city": "Bucharest",
+        "country": "Romania"
+      }
+    },
+    {
+      "hop": 7,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 8,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 9,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 10,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 11,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 12,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 13,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 14,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 15,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 16,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 17,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 18,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 19,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 20,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 21,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 22,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 23,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 24,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 25,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 26,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 27,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 28,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 29,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    },
+    {
+      "hop": 30,
+      "ip": null,
+      "rtt_ms": null,
+      "city": "",
+      "region": "",
+      "country": "",
+      "geo": null
+    }
+  ]
+}

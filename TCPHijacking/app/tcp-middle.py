@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from netfilterqueue import NetfilterQueue
 from scapy.all import IP, TCP, Raw
 import logging

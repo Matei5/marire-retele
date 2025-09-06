@@ -1,8 +1,0 @@
-# Python bytecode cache directories
-__pycache__/
-**/__pycache__/
-
-# Compiled Python files (optional, related to __pycache__)
-*.pyc
-*.pyo
-*.pyd
