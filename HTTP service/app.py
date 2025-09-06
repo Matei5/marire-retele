@@ -3,63 +3,72 @@ import ipaddress
 
 app = Flask(__name__)
 
-def needed_prefix(hosts):
-    # calculeaza prefixul minim /X care poate sustine numarul cerut de hosturi
-    need = max(0, int(hosts))
+@app.route("/")
+def root():
+    return "HTTP partition service"
+
+def needed_prefix(hosts: int) -> int:
+    """Calculeaza cel mai mic prefix /X care permite 'hosts' noduri (IPv4, fara adresele .0 si .255)."""
+    value = int(hosts)
+    if value < 0:
+        raise ValueError("cerinta invalida")
+
     capacity = 1
     usable = -2
     prefix = 32
-    while usable < need:
+    while usable < value:
         capacity <<= 1
         prefix -= 1
         usable = capacity - 2
-        if prefix < 0:
-            break
     return prefix
 
-def allocate_vlsm(supernet, demands):
-    # sorteaza cerintele descrescator pentru a plasa mai intai retelele mari
+
+def allocate_vlsm(supernet: ipaddress.IPv4Network, demands):
+    """Aloca subretele folosind VLSM, plasand mai intai cerintele mari."""
     indexed = [(int(n), i) for i, n in enumerate(demands)]
     indexed.sort(key=lambda x: x[0], reverse=True)
-    free = [supernet]
-    result = [None] * len(demands)
 
-    for need_hosts, orig_idx in indexed:
+    free_blocks = [supernet]
+    assignments = [None] * len(demands)
+
+    for need_hosts, original_index in indexed:
         target_prefix = needed_prefix(need_hosts)
-        if target_prefix < 0 or target_prefix > 30:
+        # pentru LAN: nu permitem /31 sau /32
+        if target_prefix > 30:
             raise ValueError("cerinta invalida")
 
-        # cauta primul bloc liber suficient de mare
         chosen_idx = None
-        for j, block in enumerate(free):
-            if block.prefixlen <= target_prefix and block.network_address in supernet:
+        for j, block in enumerate(free_blocks):
+            if block.prefixlen <= target_prefix and block.subnet_of(supernet):
                 chosen_idx = j
                 break
+
         if chosen_idx is None:
             raise ValueError("nu exista spatiu disponibil")
 
-        block = free.pop(chosen_idx)
+        block = free_blocks.pop(chosen_idx)
 
-        # imparte blocul pana cand se ajunge la prefixul dorit
         while block.prefixlen < target_prefix:
-            halves = list(block.subnets(prefixlen_diff=1))
-            left, right = halves[0], halves[1]
+            left, right = list(block.subnets(prefixlen_diff=1))
             block = left
-            free.append(right)
+            free_blocks.append(right)
 
-        result[orig_idx] = block
+        assignments[original_index] = block
 
-    if any(net is None for net in result):
+    if any(net is None for net in assignments):
         raise ValueError("eroare la alocare")
-    return result
+
+    return assignments
+
 
 @app.route("/partition", methods=["POST"])
 def partition():
-    # citeste JSON din request si valideaza formatul
+    # citeste JSON si valideaza formatul
     try:
         data = request.get_json(force=True, silent=False)
     except Exception:
         return jsonify(error="json invalid"), 400
+
     if not isinstance(data, dict):
         return jsonify(error="json trebuie sa fie obiect"), 400
 
@@ -78,19 +87,17 @@ def partition():
     except Exception:
         return jsonify(error="subnet invalid"), 400
 
-    # incearca sa aloce subretele conform cerintelor
     try:
         allocations = allocate_vlsm(supernet, dims)
     except ValueError as e:
         return jsonify(error=str(e)), 400
 
-    # returneaza raspunsul sub forma LAN1, LAN2, ...
-    out = {f"LAN{i+1}": str(net) for i, net in enumerate(allocations)}
-    return jsonify(out), 200
+    response = {f"LAN{i+1}": str(net) for i, net in enumerate(allocations)}
+    return jsonify(response), 200
+
 
 @app.route("/health", methods=["GET"])
 def health():
-    # endpoint simplu pentru verificare server
     return jsonify(status="ok"), 200
 
 app.run(host="0.0.0.0", port=8081)
