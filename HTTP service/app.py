@@ -8,7 +8,6 @@ def root():
     return "HTTP partition service"
 
 def needed_prefix(hosts: int) -> int:
-    """Calculeaza cel mai mic prefix /X care permite 'hosts' noduri (IPv4, fara adresele .0 si .255)."""
     value = int(hosts)
     if value < 0:
         raise ValueError("cerinta invalida")
@@ -24,7 +23,6 @@ def needed_prefix(hosts: int) -> int:
 
 
 def allocate_vlsm(supernet: ipaddress.IPv4Network, demands):
-    """Aloca subretele folosind VLSM, plasand mai intai cerintele mari."""
     indexed = [(int(n), i) for i, n in enumerate(demands)]
     indexed.sort(key=lambda x: x[0], reverse=True)
 
