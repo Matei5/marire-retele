@@ -14,7 +14,10 @@ sudo netfilter-persistent save
 ## Run
 
 ### On VPS
+
+#### go to file location
 cd /opt/marire-retele/TunnelDNS
+
 sudo -E python3 dns_server.py
 
 ### Local
