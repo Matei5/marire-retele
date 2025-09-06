@@ -1,6 +1,6 @@
 # Tunel DNS
 
-## First Run
+## Setup VPS
 
 ### Free port 53:
 sudo sed -i 's/^#\?DNSStubListener=.*/DNSStubListener=no/' /etc/systemd/resolved.conf 
